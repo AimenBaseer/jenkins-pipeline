@@ -7,6 +7,7 @@ pipeline {
                 echo 'hello'
                 echo 'hello world'
                 sh 'node --version'
+                sh 'node ./file1.js'
             }
         }
     }
