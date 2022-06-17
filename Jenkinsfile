@@ -4,9 +4,6 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                echo 'hello'
-                echo 'hello world'
-                sh 'node --version'
                 sh 'npm install'
                 sh 'node ./file1.js'
             }
