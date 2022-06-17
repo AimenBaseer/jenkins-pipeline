@@ -7,9 +7,19 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Build') { 
+        stage('Download from S3') { 
             steps { 
-                sh 'node ./file1.js'
+                sh 'node ./scripts/stage1.js'
+            }
+        }
+        stage('Run unity scripts') { 
+            steps { 
+                sh 'node ./scripts/stage2.js'
+            }
+        }
+        stage('Upload to S3') { 
+            steps { 
+                sh 'node ./scripts/stage3.js'
             }
         }
     }
