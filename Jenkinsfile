@@ -7,17 +7,17 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Run scripts') { 
+        stage('Download File') { 
             steps { 
                 sh 'node ./scripts/downloadStage.js'
             }
         }
-       stage('Run scripts') { 
+       stage('Process file') { 
             steps { 
                 sh 'node ./scripts/processingStage.js'
             }
         }
-       stage('Run scripts') { 
+       stage('Upload File') { 
             steps { 
                 sh 'node ./scripts/uploadStage.js'
             }
