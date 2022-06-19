@@ -9,7 +9,17 @@ pipeline {
         }
         stage('Run scripts') { 
             steps { 
-                sh 'node ./file1.js'
+                sh 'node ./scripts/downloadStage.js'
+            }
+        }
+       stage('Run scripts') { 
+            steps { 
+                sh 'node ./scripts/processingStage.js'
+            }
+        }
+       stage('Run scripts') { 
+            steps { 
+                sh 'node ./scripts/uploadStage.js'
             }
         }
     }
